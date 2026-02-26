@@ -1,12 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sitio de Juan Olivera - Somee</title>
+  <meta name="description" content="Sitio web simple para hosting tradicional (Somee)." />
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f6f7fb;
+      color: #111827;
+    }
+    .wrap {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 640px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      letter-spacing: .2px;
+    }
+    .muted { color: #6b7280; margin: 0 0 16px; }
+    .info {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid #eef2f7;
+    }
+    .row { display: flex; justify-content: space-between; gap: 12px; }
+    .label { font-weight: 600; color: #374151; }
+    .value { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    footer {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    a { color: inherit; }
+  </style>
 </head>
 <body>
-    <h1>MI PRIMER COMMIT :D</h1>
-    <p>Prueba modificacion</p>
+  <div class="wrap">
+    <main class="card">
+      <h1>Hosting tradicional (Somee)</h1>
+      <p class="muted">Sitio web simple en un único archivo HTML.</p>
+
+      <section class="info" aria-label="Datos del estudiante">
+        <div class="row">
+          <span class="label">Nombre</span>
+          <span class="value">Juan Olivera</span>
+        </div>
+        <div class="row">
+          <span class="label">Número de estudiante</span>
+          <span class="value">348856</span>
+        </div>
+        <div class="row">
+          <span class="label">Grupo</span>
+          <span class="value">GRUPO_AQUI</span>
+        </div>
+      </section>
+
+      <footer>
+        <span>Última actualización: <span id="fecha"></span></span>
+        <span>Acceso seguro: <strong>HTTPS</strong></span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Fecha simple para mostrar que el sitio carga correctamente
+    const f = new Date();
+    document.getElementById("fecha").textContent =
+      f.toLocaleDateString("es-UY", { year: "numeric", month: "2-digit", day: "2-digit" });
+  </script>
 </body>
 </html>
